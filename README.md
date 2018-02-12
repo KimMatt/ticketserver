@@ -1,7 +1,7 @@
 ## Ticket Server
 ##### Simple Flask server using Mongo Engine
 
-###API
+### API
 **GET** /tickets?filter=[date|status]
 > Return list of all tickets, optional filter argument
 
