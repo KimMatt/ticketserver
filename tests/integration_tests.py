@@ -1,5 +1,6 @@
 import os
 
+# So the server uses a test database
 os.environ["TESTING"] = "TRUE"
 
 import pytest
@@ -11,7 +12,6 @@ import json
 def app():
 	app = application.create_app()
 	
-	# So the server uses a test database
 	yield app.test_client()
 
 	# To drop the test database
