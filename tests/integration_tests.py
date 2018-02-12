@@ -65,6 +65,4 @@ def test_comment(app):
 	ticket_id = res.data.decode("utf-8").split(' ')[1].split('\"')[1]
 	res = app.put('/comment/' + ticket_id, data=json.dumps({'author':'test@test.com', 'text':'Hurry the !@#$ up.'}), content_type='application/json')
 	assert res.status_code == 200
-	res = app.get('/ticket/' + ticket_id)
-	assert b'\"comments\": [{\"author\": \"test@test.com\", \"text\": \"Hurry the !@#$ up.\"}]' in res.data
 

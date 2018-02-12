@@ -1,0 +1,26 @@
+#Simple Flask server using Mongo Engine, Ticket Server
+
+GET /tickets?filter=[date|status]
+	Return list of all tickets, optional filter argument
+
+POST /tickets
+	Submit a ticket. Required to include `creator` and `title` in the body.
+
+GET /ticket/<ticket_id>
+	Return Json data about a single ticket
+
+PUT /ticket/<ticket_id>
+	Update the ticket by changing `status` or `assignee` by including them as arguments in the body.
+
+PUT /comment/<ticket_id>
+	Add a comment to 
+
+#Testing
+
+Run `pytest tests/*` from root project directory.
+
+#Docker Deploy
+
+You'll need docker and docker-compose. Simply run the command `docker-compose up`
+
+To manually start the server (with python 3) run `python3 server.py`

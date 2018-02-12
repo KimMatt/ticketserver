@@ -1,0 +1,18 @@
+mongodb:
+  image: franciscpd/mongodb-hacker-docker
+  container_name: mongodb
+  restart: always
+  ports:
+    - "27017:27017"
+
+ticketserver:
+  image: mk1995x/ticketserver:latest
+  container_name: ticketserver
+  restart: always
+  links:
+    - mongodb:localhost
+  environment:
+    - ENVIRONMENT=PROD
+    - PORT=8000
+  ports:
+    - "8000:8000"
